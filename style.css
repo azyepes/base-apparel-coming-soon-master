@@ -35,6 +35,7 @@ body {
 main {
     width: 100%;
     height: 95%;
+    max-width: 42.5rem;
     display: block;
 }
 
@@ -90,6 +91,10 @@ picture img {
     color: var(--desaturated-red);
 }
 
+form {
+    width: 100%;
+}
+
 .text-box label {
     margin-top: 3rem;
     position: relative;
@@ -98,30 +103,41 @@ picture img {
     width: 100%;
 }
 
-.text-box label input {
+.input {
     width: 100%;
     height: 5rem;
     border-radius: 5rem;
     border: solid 0.1rem hsla(0, 36%, 70%, 0.5);
     background: transparent;
     padding-left: 2.5rem;
-    color: hsla(0, 36%, 70%, 0.5);
+    /* color: hsla(0, 36%, 70%, 0.5); */
     font-family: 'Josefin Sans', sans-serif;
-    font-weight: 400;
+    font-weight: 700;
     font-size: 1.4rem;
     outline-color: hsla(0, 36%, 70%, 0.5);
     outline-width: 0.2rem;
-
 }
 
-.text-box label input::placeholder {
+.invalid {
+    border: solid 0.25rem var(--soft-red);
+}
+
+.icon {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    top: 1.5rem;
+    right: 7rem;
+}
+
+.input::placeholder {
     color: hsla(0, 36%, 70%, 0.5);
     font-weight: 400;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 1.4rem;
 }
 
-.text-box label button {
+.button {
     position: absolute;
     right: 0;
     width: 20%;
@@ -131,6 +147,21 @@ picture img {
     background: linear-gradient(135deg, hsl(0, 80%, 86%) 0%, hsl(0, 74%, 74%) 100%);
     border: none;
     cursor: pointer;
+}
+
+.invalid-button {
+    background: linear-gradient(135deg, hsl(0, 100%, 100%) 0% 0%, hsl(0, 74%, 74%) 100%);
+}
+
+.error {
+    width: 80%;
+    margin-top: 0.5rem;
+    margin-left: auto;
+    font-size: 1.4rem;
+    font-weight: 400;
+    letter-spacing: 0.01rem;
+    color: var(--soft-red);
+    text-align: left;
 }
 
 footer { 
@@ -145,4 +176,33 @@ footer {
 
 footer a { 
     color: hsl(228, 45%, 44%); 
+}
+
+.hiden {
+    display: none;
+}
+
+@media only screen and (min-width: 1440px) {
+    main {
+        max-width: 130rem;
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        grid-template-rows: 1fr 1fr; 
+        gap: 10px 10px; 
+        grid-template-areas: 
+            ". ."
+            ". ."; 
+    }
+
+    .logo {
+        grid-area: logo;
+    }
+
+    .text-box {
+        grid-area: box;
+    }
+
+    picture {
+        grid-area: hero;
+    }
 }

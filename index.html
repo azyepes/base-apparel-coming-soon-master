@@ -25,10 +25,13 @@
       <h1>SOON</h1>
       <p class="description">Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals.</p>
       <label for="email">
-        <input type="email" name="email" id="email" placeholder="Email Address">
-        <button type="submit"><img src="./images/icon-arrow.svg" alt="icon-arrow"></button>
+        <input class="input" type="email" name="email" id="email" placeholder="Email Address">
+        <img id="icon-error" class="icon hiden" src="./images/icon-error.svg" alt="icon-error">
+        <img id="icon-valid" class="icon hiden" src="./images/check.png" alt="icon-valid">
+        <button class="button" id="submit"><img src="./images/icon-arrow.svg" alt="icon-arrow"></button>
       </label>
     </div>
+    <p id="error" class="error"></p>
   </main>  
   <footer>
     <p class="attribution">
@@ -36,5 +39,6 @@
       Coded by <a href="https://www.linkedin.com/in/luisypsfdez/" target="_blank">Luis Yps Fdez</a>.
     </p>
   </footer>
+  <script src="./index.js"></script>
 </body>
 </html>

@@ -14,11 +14,13 @@
     <div class="logo">
       <img src="./images/logo.svg" alt="logo">
     </div>
-    <picture class="hero">
-      <source media="(max-width: 1024px)" srcset="./images/hero-mobile.jpg">
-      <source media="(min-width: 1440px)" srcset="./images/hero-desktop.jpg">
-      <img src="./images/hero-mobile.jpg" alt="hero-mobile">
-    </picture>
+    <div class="picture-box">
+      <picture class="hero">
+        <source media="(max-width: 1024px)" srcset="./images/hero-mobile.jpg">
+        <source media="(min-width: 1440px)" srcset="./images/hero-desktop.jpg">
+        <img src="./images/hero-mobile.jpg" alt="hero-mobile">
+      </picture>
+    </div>
     <div class="text-box">
       <p class="title">WE'RE</p>
       <h1>COMING</h1>
@@ -30,8 +32,8 @@
         <img id="icon-valid" class="icon hiden" src="./images/check.png" alt="icon-valid">
         <button class="button" id="submit"><img src="./images/icon-arrow.svg" alt="icon-arrow"></button>
       </label>
+      <p id="error" class="error"></p>
     </div>
-    <p id="error" class="error"></p>
   </main>  
   <footer>
     <p class="attribution">

@@ -25,7 +25,7 @@ html {
 body {
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(135deg, hsl(0, 0%, 100%) 0%, hsl(0, 100%, 98%) 100%);
+    /* background: linear-gradient(135deg, hsl(0, 0%, 100%) 0%, hsl(0, 100%, 98%) 100%); */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -37,6 +37,7 @@ main {
     height: 95%;
     max-width: 42.5rem;
     display: block;
+    background: linear-gradient(135deg, hsl(0, 0%, 100%) 0%, hsl(0, 100%, 98%) 100%);
 }
 
 .logo {
@@ -57,12 +58,7 @@ picture img {
 
 .text-box {
     width: 80%;
-    height: max-content;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
     text-align: center;
 }
 
@@ -89,10 +85,6 @@ picture img {
     letter-spacing: 0.01rem;
     line-height: 2.5rem;
     color: var(--desaturated-red);
-}
-
-form {
-    width: 100%;
 }
 
 .text-box label {
@@ -127,7 +119,7 @@ form {
     width: 2rem;
     height: 2rem;
     top: 1.5rem;
-    right: 7rem;
+    right: 8rem;
 }
 
 .input::placeholder {
@@ -154,9 +146,9 @@ form {
 }
 
 .error {
-    width: 80%;
+    width: 100%;
     margin-top: 0.5rem;
-    margin-left: auto;
+    padding-left: 2.5rem;
     font-size: 1.4rem;
     font-weight: 400;
     letter-spacing: 0.01rem;
@@ -165,6 +157,7 @@ form {
 }
 
 footer { 
+    max-width: 42.5rem;
     width: 100%;
     height: 5%;
     font-size: 1.1rem; 
@@ -183,26 +176,89 @@ footer a {
 }
 
 @media only screen and (min-width: 1440px) {
+body {
+    background: none;
+}
+
     main {
-        max-width: 130rem;
-        display: grid; 
-        grid-template-columns: 1fr 1fr; 
-        grid-template-rows: 1fr 1fr; 
-        gap: 10px 10px; 
+        background: linear-gradient(135deg, hsl(0, 0%, 100%) 0%, hsl(0, 100%, 98%) 100%);;
+        height: 60%;
+        max-width: 100rem;
+        display: grid;
+        grid-template-columns: 60% 40%;
+        grid-template-rows: 20% 80%;
         grid-template-areas: 
-            ". ."
-            ". ."; 
+        'logo hero'
+        'boxt hero';
     }
 
     .logo {
+        width: 60%;
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
         grid-area: logo;
+        align-self: center;
+    }
+
+    .logo img {
+        width: 28%;
     }
 
     .text-box {
-        grid-area: box;
+        width: 60%;
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        grid-area: boxt;
+        text-align: left;
+    }
+    
+    .title {
+        margin-top: 5.5rem;
+        font-weight: 300;
+        letter-spacing: 1.2rem;
+    }
+    
+    .text-box h1 {
+        margin-top: 0.2rem;
+        letter-spacing: 1.2rem;
+    }
+    
+    .description {
+        margin-top: 2.5rem;
+        font-size: 1.3rem;
+        font-weight: 400;
+        letter-spacing: 0.01rem;
+        line-height: 2rem;
+        color: var(--desaturated-red);
     }
 
-    picture {
+    .input {
+        height: 4rem;
+    }
+
+    .button {
+        /* width: 21%; */
+        height: 4rem;
+    }
+
+    .icon {
+        top: 1rem;
+        right: 8rem;
+    }
+
+    .picture-box {
+        height: 100%;
+        grid-column: 2 / 3;
+        grid-row: 1 / 3;
         grid-area: hero;
     }
+
+    .hero img {
+        height: 100%;
+    }
+
+    footer {
+        max-width: 100rem;
+    }
+
 }
